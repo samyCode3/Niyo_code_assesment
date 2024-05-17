@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: root
+      MYSQL_DATABASE: task_manager
+    ports:
+      - "3310:3306"
+    volumes:
+      - db_data:/var/lib/mysql 
+
+  redis:
+    image: redis:6.0.7
+    container_name: redis_niyo_container
+    restart: always
+    volumes:
+      - redis_volume_data:/data
+    ports:
+      - "6373:6379"
+
+  redis_insight:
+    image: redislabs/redisinsight:latest
+    container_name: redis_insight_niyo
+    restart: always
+    volumes:
+      - redis_insight_volume_data:/db
+    ports:
+      - "8002:8001"
+volumes:
+  db_data:
+  redis_volume_data:
+  redis_insight_volume_data:
