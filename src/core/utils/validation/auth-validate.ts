@@ -30,3 +30,17 @@ export const validateLoginField = async (body: any) => {
 
   return validator(schema, body);
 };
+
+
+export const validateUpdate = async (body: any) => {
+  const schema: ObjectSchema = joi.object().keys({
+    firstName: joi.string(),
+    lastName: joi.string(),
+    username: joi.string().trim(),
+   
+   
+  });
+
+  return validator(schema, body);
+
+}

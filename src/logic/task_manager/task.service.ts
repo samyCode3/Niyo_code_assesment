@@ -6,7 +6,7 @@ import { TaskManager } from "./entity/task_manager.entity";
 import { SubTaskManager } from "./entity/sub_task.entity";
 import { ApplicationError } from "@core/module/internal/error/error";
 import { StatusCodes } from "http-status-codes";
-import { validateEndDate, validateStartDate } from "@core/utils/data-validation";
+import { validateEndDate, validateStartDate } from "@core/utils/date-validation";
 
 @injectable()
 export class TaskService {

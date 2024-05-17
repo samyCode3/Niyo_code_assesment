@@ -15,19 +15,23 @@ Navigate to the Repository Directory:bashCopy codecd Niyo_code_assesment
 -Make sure You have node js install
 
 # How to run the code and migration
-
-# if you prefer using docker
+ If you prefer using docker
 
 Step:
 Step 1: Run npm run docker;
+
 Step 2: Run npm run mysql:migrate;
+
 Step 3: Run npm run dev
 
 # If you prefer not using docker
 
 Step:
 You can connect to you database then run
+
 Step 1: Run npm run mysql:migrate;
+
 Step 2: Run npm run dev
 
 
+# Documentation File

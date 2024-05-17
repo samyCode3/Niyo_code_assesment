@@ -35,3 +35,11 @@ export const validateUpdateTaskField = async (body: any): Promise<TaskManager> =
   });
   return validator(schema, body);
 }
+
+export const validateMarkAsCompleted = (body: any): Promise<TaskManager> => {
+  const schema: ObjectSchema = joi.object().keys({
+    status: joi.string().valid('Almost done', 'Completed', 'Pending').required()
+  });
+
+  return validator(schema, body);
+}

@@ -2,6 +2,7 @@ import { SERVICE_MODULE } from "@core/ioc/token";
 import { deserializeUser } from "@core/middleware/auth.middleware";
 import { ApplicationError } from "@core/module/internal/error/error";
 import {
+  validateMarkAsCompleted,
   validateParamsId,
   validateTaskField,
   validateUpdateTaskField,
@@ -126,7 +127,7 @@ export class TaskManagerController {
   ) {
     const claim = <Record<string, any>>(req as any).user;
     const input = await validateParamsId({ id });
-    
+
     const task = await this.task_.taskById(input.id);
     if (!task) {
       throw new ApplicationError(
@@ -143,6 +144,22 @@ export class TaskManagerController {
     }
 
     await this.task_.deleteTask(input.id);
-    return res.status(StatusCodes.OK).json({ message: "This task was deleted"});
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "This task was deleted" });
+  }
+  @httpPatch("/completed-task/:id", deserializeUser)
+  public async markAsCompleted(
+    @request() req: Request,
+    @response() res: Response | any,
+    @requestParam("id") id: string
+  ) {
+    const claim = <Record<string, any>>(req as any).body;
+    const input = await validateParamsId({ id });
+    const status = await validateMarkAsCompleted(claim);
+    await this.task_.update(status, input.id);
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "Update was successfull" });
   }
 }
