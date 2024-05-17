@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const inversify_1 = require("inversify");
+const repository_1 = require("../../data/repository/repository");
+const auth_service_1 = require("../../logic/auth/auth.service");
+require("../../web/controllers/index");
+const token_1 = require("../ioc/token");
+const mysql_1 = __importDefault(require("./mysql"));
+const redis_config_1 = require("./redis.config");
+const functions_1 = require("../utils/functions");
+const user_service_1 = require("../../logic/user/user.service");
+const task_service_1 = require("../../logic/task_manager/task.service");
+const container = new inversify_1.Container();
+container.bind(token_1.GENERAL_FUNCTIONS.Gen).to(functions_1.GeneralFunctions);
+container.bind(token_1.MODULE_TOKENS.KnexClient).toConstantValue(mysql_1.default);
+container.bind(token_1.MODULE_TOKENS.redis).to(redis_config_1.RedisProperties);
+container.bind(token_1.MODULE_TOKENS.Repository).to(repository_1.Repository);
+container.bind(token_1.SERVICE_MODULE.Auth_Service).to(auth_service_1.AuthService);
+container.bind(token_1.SERVICE_MODULE.User_Service).to(user_service_1.UserService);
+container.bind(token_1.SERVICE_MODULE.Task_Manager).to(task_service_1.TaskService);
+exports.default = container;
