@@ -5,7 +5,7 @@ import express, { NextFunction, Request, Response } from "express";
 import container from "../core/config/di-container";
 import { InversifyExpressServer } from "inversify-express-utils";
 import morgan from "morgan";
-import { globalErrorMiddleware } from "@core/middleware/global.error";
+import { globalErrorMiddleware } from "../core/middleware/global.error";
 
 
 let PORT = process.env.PORT || 3000;

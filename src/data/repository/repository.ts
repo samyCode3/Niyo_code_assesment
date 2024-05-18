@@ -2,7 +2,7 @@ import { inject, injectable } from 'inversify';
 import { Knex } from 'knex';
 import  {MODULE_TOKENS} from '../../core/ioc/token'
 import { ulid } from 'ulid';
-import configuration from "@core/config/mysql";
+import configuration from "../../core/config/mysql";
 
 @injectable()
 export class Repository<T = Record<string, any>> {

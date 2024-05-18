@@ -8,7 +8,7 @@
 // createdAt DATE,
 // updatedAt DATE
 
-import PartialInstantiable from "@core/utils/partial-instant";
+import PartialInstantiable from "../../../core/utils/partial-instant";
 
 export class BaseEntity<T> extends PartialInstantiable<T> {
     id: string;
