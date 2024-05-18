@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import ".../../../core/config/redis.config";
+import "../core/config/redis.config";
 
 import express, { NextFunction, Request, Response } from "express";
 import container from "@core/config/di-container";
