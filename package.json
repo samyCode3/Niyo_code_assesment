@@ -2,13 +2,13 @@
   "name": "auth-service",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -r tsconfig-paths/register ./src/web/app.ts | pino-pretty -C",
+    "dev": "nodemon -r tsconfig-paths/register ./src/web/server.ts | pino-pretty -C",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "mysql:migrate": "ts-node database/script.ts",
-    "start":"npm run build && node build/src/web/app.js",
+    "start":"npm run build && node build/src/web/server.js",
     "docker": "docker-compose up -d"
   },
   "keywords": [],

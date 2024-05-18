@@ -10,7 +10,6 @@ import { globalErrorMiddleware } from "../core/middleware/global.error";
 
 let PORT = process.env.PORT || 3000;
 export const mySerever = () => {
-
   const server = new InversifyExpressServer(container, null, {
     rootPath: "/api/v1",
   });
@@ -22,9 +21,6 @@ export const mySerever = () => {
     });
     app.use(morgan("dev"));
 
-    app.listen(PORT, () => {
-      console.log(`Server is running on port http://localhost${PORT}`);
-    });
   });
 
   server.setErrorConfig((app) => {
@@ -41,4 +37,3 @@ export const mySerever = () => {
 }
 
 
-mySerever()
