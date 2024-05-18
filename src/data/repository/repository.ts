@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify';
 import { Knex } from 'knex';
-import  {MODULE_TOKENS} from '@core/ioc/token'
+import  {MODULE_TOKENS} from '../../core/ioc/token'
 import { ulid } from 'ulid';
 import configuration from "@core/config/mysql";
 

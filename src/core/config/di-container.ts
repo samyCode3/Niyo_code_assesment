@@ -1,7 +1,7 @@
 import { Container } from "inversify";
 import { Repository } from "../../data/repository/repository";
 import { AuthService } from "../../logic/auth/auth.service";
-import "@web/controllers/index"
+import "../../web/controllers"
 import {
   GENERAL_FUNCTIONS,
   MODULE_TOKENS,
