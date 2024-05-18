@@ -8,7 +8,7 @@
     "dev": "nodemon -r tsconfig-paths/register ./src/web/app.ts | pino-pretty -C",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "mysql:migrate": "ts-node database/script.ts",
-    "start": "node build/src/web/app.js",
+    "start":"npm run build && node build/src/web/app.js",
     "docker": "docker-compose up -d"
   },
   "keywords": [],
