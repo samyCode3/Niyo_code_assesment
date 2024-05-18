@@ -3,7 +3,7 @@ import container from "@core/config/di-container";
 import { InversifyExpressServer } from "inversify-express-utils";
 
 import morgan from "morgan";
-import { globalErrorMiddleware } from "@core/middleware/global.error";
+import { globalErrorMiddleware } from "../core/middleware/global.error";
 
 export class App {
   async setup() {

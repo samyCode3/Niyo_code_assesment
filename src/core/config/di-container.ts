@@ -1,18 +1,18 @@
 import { Container } from "inversify";
-import { Repository } from "@data/repository/repository";
-import { AuthService } from "@logic/auth/auth.service";
+import { Repository } from "../../data/repository/repository";
+import { AuthService } from "../../logic/auth/auth.service";
 import "@web/controllers/index"
 import {
   GENERAL_FUNCTIONS,
   MODULE_TOKENS,
   SERVICE_MODULE,
-} from "@core/ioc/token";
+} from "../../core/ioc/token";
 import { Knex } from "knex";
 import configuration from "./mysql";
 import { RedisProperties } from "./redis.config";
-import { GeneralFunctions } from "@core/utils/functions";
-import { UserService } from "@logic/user/user.service";
-import { TaskService } from "@logic/task_manager/task.service";
+import { GeneralFunctions } from "../../core/utils/functions";
+import { UserService } from "../../logic/user/user.service";
+import { TaskService } from "../../logic/task_manager/task.service";
 
 
 const container = new Container();

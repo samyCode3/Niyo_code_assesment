@@ -1,4 +1,4 @@
-import { ApplicationError } from '@core/module/internal/error/error';
+import { ApplicationError } from '../../core/module/internal/error/error';
 import { NextFunction, Request, Response } from 'express';
 import Status from 'http-status-codes';
 

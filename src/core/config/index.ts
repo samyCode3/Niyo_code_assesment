@@ -1,7 +1,7 @@
 import {
   DevelopmentLogger,
   ProductionLogger,
-} from "@core/config/logger";
+} from "../../core/config/logger";
 
 let logger: any;
 

@@ -1,4 +1,4 @@
-import { VerifyToken } from "@core/module/jwt-util"
+import { VerifyToken } from "../../core/module/jwt-util"
 import { NextFunction } from "express"
 
 const secret = process.env.JWT_SECRET
