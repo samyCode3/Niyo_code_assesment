@@ -1,6 +1,6 @@
 import { ObjectSchema } from "joi";
 import { StatusCodes } from "http-status-codes";
-import { ApplicationError } from "@core/module/internal/error/error";
+import { ApplicationError } from "../../core/module/internal/error/error";
 
 export default (schema : ObjectSchema, body : any) =>{
     const { error, value } = schema.validate(body,{abortEarly: true});
