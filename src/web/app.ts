@@ -19,6 +19,9 @@ export const mySerever = () => {
     app.get("/", (req: Request, res: Response, next: NextFunction) => {
       return res.send(`Hello Niyo Api`);
     });
+    app.listen(PORT, () => {
+      console.log(`Server is running on port http://localhost${PORT}`);
+    });
     app.use(morgan("dev"));
 
   });
