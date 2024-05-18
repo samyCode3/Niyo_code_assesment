@@ -1,19 +1,16 @@
 import { inject, injectable } from "inversify";
-import { Repository } from "@data/repository/repository";
-import {
-  GENERAL_FUNCTIONS,
-  MODULE_TOKENS,
-  SERVICE_MODULE,
-} from "@core/ioc/token";
+import { GENERAL_FUNCTIONS, MODULE_TOKENS, SERVICE_MODULE } from "../../core/ioc/token";
+import { RedisProperties } from "../../core/config/redis.config";
+import { GeneralFunctions } from "../../core/utils/functions";
+import { Repository } from "../../data/repository/repository";
 import { Login, User } from "./entity/auth.entity";
-import { RedisProperties } from "@core/config/redis.config";
-import { GeneralFunctions } from "@core/utils/functions";
+import { UserService } from "../user/user.service";
+import { ApplicationError } from "../../core/module/internal/error/error";
 import { StatusCodes } from "http-status-codes";
-import { BadRequestResult } from "inversify-express-utils/lib/results";
-import { ApplicationError } from "@core/module/internal/error/error";
-import { UserService } from "@logic/user/user.service";
-import { AccessToken, VerifyToken } from "@core/module/jwt-util";
-import { hashing, verifyHashToken } from "@core/module/bcyptjs-util";
+import { AccessToken } from "../../core/module/jwt-util";
+import { verifyHashToken } from "../../core/module/bcyptjs-util";
+
+
 
 @injectable()
 export class AuthService {
@@ -146,3 +143,4 @@ export class AuthService {
     return { user_info, token };
   }
 }
+

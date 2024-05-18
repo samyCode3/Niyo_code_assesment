@@ -1,12 +1,13 @@
-import { MODULE_TOKENS, SERVICE_MODULE } from "@core/ioc/token";
+
+
+import { MODULE_TOKENS } from "../../core/ioc/token";
+import { Repository } from "../../data/repository/repository";
 import { inject, injectable } from "inversify";
-import { User } from "../auth/entity/auth.entity";
-import { Repository } from "@data/repository/repository";
 import { TaskManager } from "./entity/task_manager.entity";
 import { SubTaskManager } from "./entity/sub_task.entity";
-import { ApplicationError } from "@core/module/internal/error/error";
+import { ApplicationError } from "../../core/module/internal/error/error";
 import { StatusCodes } from "http-status-codes";
-import { validateEndDate, validateStartDate } from "@core/utils/date-validation";
+import { validateEndDate, validateStartDate } from "../../core/utils/date-validation";
 
 @injectable()
 export class TaskService {

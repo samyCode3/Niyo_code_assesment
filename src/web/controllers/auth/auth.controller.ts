@@ -6,16 +6,16 @@ import {
   requestParam,
   httpPost,
 } from "inversify-express-utils";
-import { AuthService } from "@logic/auth/auth.service";
+import { AuthService } from "../../../logic/auth/auth.service";
 import { inject } from "inversify";
-import { SERVICE_MODULE } from "@core/ioc/token";
+import { SERVICE_MODULE } from "../../../core/ioc/token";
 import { Request } from "express";
 import {
   validateLoginField,
   validateOtpField,
   validateRegisterField,
-} from "@core/utils/validation/auth-validate";
-import { hashing } from "@core/module/bcyptjs-util";
+} from "../../../core/utils/validation/auth-validate";
+import { hashing } from "../../../core/module/bcyptjs-util";
 @controller("/auth")
 export default class AuthController {
   constructor(

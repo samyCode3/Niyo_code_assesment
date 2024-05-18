@@ -1,6 +1,6 @@
 import joi, { ObjectSchema } from "joi";
 import validator from "../validator";
-import { TaskManager } from "@logic/task_manager/entity/task_manager.entity";
+import { TaskManager } from "../../../logic/task_manager/entity/task_manager.entity";
 
 export const validateTaskField = async (body: any): Promise<TaskManager> => {
   const schema: ObjectSchema = joi.object().keys({

@@ -1,7 +1,7 @@
 import { MODULE_TOKENS, SERVICE_MODULE } from "@core/ioc/token";
 import { inject, injectable } from "inversify";
 import { User } from "../auth/entity/auth.entity";
-import { Repository } from "@data/repository/repository";
+import { Repository } from "../../data/repository/repository";
 
 @injectable()
 export class UserService {

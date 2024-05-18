@@ -1,7 +1,7 @@
-import { MODULE_TOKENS, SERVICE_MODULE } from "@core/ioc/token";
-import { deserializeUser } from "@core/middleware/auth.middleware";
-import { validateUpdate } from "@core/utils/validation/auth-validate";
-import { UserService } from "@logic/user/user.service";
+import { MODULE_TOKENS, SERVICE_MODULE } from "../../../core/ioc/token";
+import { deserializeUser } from "../../../core/middleware/auth.middleware";
+import { validateUpdate } from "../../../core/utils/validation/auth-validate";
+import { UserService } from "../../../logic/user/user.service";
 import { StatusCodes } from "http-status-codes";
 
 import { inject } from "inversify";

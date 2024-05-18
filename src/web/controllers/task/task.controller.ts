@@ -1,13 +1,13 @@
-import { SERVICE_MODULE } from "@core/ioc/token";
-import { deserializeUser } from "@core/middleware/auth.middleware";
-import { ApplicationError } from "@core/module/internal/error/error";
+import { SERVICE_MODULE } from "../../../core/ioc/token";
+import { deserializeUser } from "../../../core/middleware/auth.middleware";
+import { ApplicationError } from "../../../core/module/internal/error/error";
 import {
   validateMarkAsCompleted,
   validateParamsId,
   validateTaskField,
   validateUpdateTaskField,
-} from "@core/utils/validation/task-validate";
-import { TaskService } from "@logic/task_manager/task.service";
+} from "../../../core/utils/validation/task-validate";
+import { TaskService } from "../../../logic/task_manager/task.service";
 import { StatusCodes } from "http-status-codes";
 import { inject } from "inversify";
 import {

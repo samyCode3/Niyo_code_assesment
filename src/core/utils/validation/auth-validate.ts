@@ -1,4 +1,4 @@
-import { User } from "@logic/auth/entity/auth.entity";
+import { User } from "../../../logic/auth/entity/auth.entity";
 import joi, { ObjectSchema } from "joi";
 import validator from "../validator";
 
