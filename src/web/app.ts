@@ -7,7 +7,10 @@ import container from "../core/config/di-container";
 import { InversifyExpressServer } from "inversify-express-utils";
 import morgan from "morgan";
 import { globalErrorMiddleware } from "../core/middleware/global.error";
+
+let PORT = process.env.PORT || 3000;
 export const mySerever = () => {
+
   const server = new InversifyExpressServer(container, null, {
     rootPath: "/api/v1",
   });
@@ -18,6 +21,10 @@ export const mySerever = () => {
       return res.send(`Hello Niyo Api`);
     });
     app.use(morgan("dev"));
+
+    app.listen(PORT, () => {
+      console.log(`Server is running on port http://localhost${PORT}`);
+    });
   });
 
   server.setErrorConfig((app) => {
@@ -26,6 +33,8 @@ export const mySerever = () => {
     });
     app.use(globalErrorMiddleware());
   });
+
+  
 
   return server.build();
 
