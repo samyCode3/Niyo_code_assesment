@@ -1,5 +1,5 @@
 import express, { NextFunction, request, response } from "express";
-import container from "@core/config/di-container";
+import container from "../core/config/di-container";
 import { InversifyExpressServer } from "inversify-express-utils";
 
 import morgan from "morgan";
