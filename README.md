@@ -26,7 +26,7 @@ Step 3: Run npm run dev
 
 # If you prefer not using docker
 
-Step:
+Step:    
 You can connect to you database then run
 
 Step 1: Run npm run mysql:migrate;
@@ -35,3 +35,5 @@ Step 2: Run npm run dev
 
 
 # Documentation File
+
+https://documenter.getpostman.com/view/19952223/2sA3JT3eG8
